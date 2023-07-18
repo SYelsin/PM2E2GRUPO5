@@ -39,7 +39,7 @@ namespace PM2E2GRUPO5.Controller
         {
             try
             {
-                var uri = new Uri(URL_SITIOS + "Delete.php?id=" + id);
+                var uri = new Uri(URL_SITIOS + "Delete.php?Id=" + id);
                 var result = await client.DeleteAsync(uri);
                 if (result.IsSuccessStatusCode)
                 {

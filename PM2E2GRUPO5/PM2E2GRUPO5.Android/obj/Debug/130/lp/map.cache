@@ -1,6 +1,7 @@
 Acr.UserDialogs.dll
 AndHUD.dll
 FormsViewGroup.dll
+ImageButton.Android.dll
 Plugin.AudioRecorder.dll
 Plugin.Media.dll
 SignaturePad.dll

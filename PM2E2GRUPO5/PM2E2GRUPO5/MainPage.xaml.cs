@@ -238,19 +238,20 @@ namespace PM2E2GRUPO5
                     await audioRecorderService.StopRecording();
                     audioPlayer.Play(audioRecorderService.GetAudioFilePath());
 
-                    txtMessage.Text = "No está grabando";
-                    txtMessage.TextColor = Color.Red;
-                    btnGrabar.Text = "Grabar audio";
+                    string newImagePath = "microfono.png"; // Ruta y nombre de la nueva imagen
+                    btnGrabar.Source = ImageSource.FromFile(newImagePath);
+
                     isPlaying = true;
                 }
                 else
                 {
                     await audioRecorderService.StartRecording();
 
-                    txtMessage.Text = "Está grabando";
-                    txtMessage.TextColor = Color.Green;
-                    btnGrabar.Text = "Dejar de Grabar";
+                    string newImagePath = "nomicrofono.png"; // Ruta y nombre de la nueva imagen
+                    btnGrabar.Source = ImageSource.FromFile(newImagePath);
+
                     isPlaying = false;
+
                 }
             }
             catch (Exception ex)

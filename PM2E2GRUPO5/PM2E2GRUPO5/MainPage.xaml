@@ -4,81 +4,94 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PM2E2GRUPO5.MainPage"
              NavigationPage.HasNavigationBar="True">
-
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">#3DB601</Color>
+            <Color x:Key="SecondaryColor">#000000</Color>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource SecondaryColor}" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style TargetType="Editor">
+                <Setter Property="Keyboard" Value="Text" />
+                <Setter Property="AutoSize" Value="TextChanges" />
+                <Setter Property="MaxLength" Value="50" />
+                <Setter Property="Margin" Value="0,5,0,0" />
+                <Setter Property="Placeholder" Value="Escriba una descripción" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="Margin" Value="0,20,0,0" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="Keyboard" Value="Numeric" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="IsEnabled" Value="False" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="WidthRequest" Value="90" />
+                <Setter Property="HeightRequest" Value="40" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ScrollView>
         <StackLayout x:Name="mainLayout" Margin="20">
             <Label Text="NUEVO SITIO" 
-                   HorizontalOptions="Center"
-                   TextColor="#000000" 
                    FontSize="30"
                    FontAttributes="Bold"
                    Margin="0,0,0,20" />
-
-            <Image Source="logo.png"
-                   Aspect="AspectFit"
-                   WidthRequest="110"
-                   HorizontalOptions="Center"
-                   Margin="0,20" />
 
             <forms:SignaturePadView 
                 x:Name="PadView"
                 StrokeWidth="3"
                 WidthRequest="300"
-                HeightRequest="300"
+                HeightRequest="150"
                 VerticalOptions="Center"
                 HorizontalOptions="CenterAndExpand"
                 Margin="0,20" />
 
-            <Label Text="Latitud:" 
-                   HorizontalOptions="Start" 
-                   FontSize="20"
-                   TextColor="#000000"
-                   Margin="0,20,0,0" />
+            <StackLayout HorizontalOptions="Center">
+                <Grid Margin="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
-            <Entry x:Name="txtLatitude"
-                   Keyboard="Numeric"
-                   Margin="0,5,0,0"
-                   IsEnabled="False" />
+                    <Label Grid.Column="0" Text="Latitud:" />
+                    <Label Grid.Column="1" Text="Longitud:" />
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
-            <Label Text="Longitud:" 
-                   HorizontalOptions="Start" 
-                   FontSize="20"
-                   TextColor="#000000"
-                   Margin="0,20,0,0" />
+                    <Entry x:Name="txtLatitude"
+                           Grid.Column="0" />
 
-            <Entry x:Name="txtLongitude"
-                   Keyboard="Numeric"
-                   Margin="0,5,0,0"
-                   IsEnabled="False" />
+                    <Entry x:Name="txtLongitude"
+                           Grid.Column="1" />
+                </Grid>
+            </StackLayout>
 
             <Label Text="Descripción:" 
-                   HorizontalOptions="Start" 
-                   FontSize="20"
-                   TextColor="#000000"
                    Margin="0,20,0,0" />
 
-            <Editor x:Name="txtDescription"
-                    Keyboard="Text"
-                    AutoSize="TextChanges"
-                    MaxLength="50"
-                    Margin="0,5,0,0"
-                    Placeholder="Escriba una descripción" />
+            <Editor x:Name="txtDescription" />
 
-            <Label Text=""
-                   TextColor="#000000"
-                   HorizontalOptions="Center"
-                   x:Name="txtMessage"   
-                   FontSize="20"
-                   Margin="0,20,0,0" />
+            <Image Source="microfono.png" WidthRequest="100" HeightRequest="100" Aspect="AspectFit" 
+       VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+       IsEnabled="True" BackgroundColor="Transparent" 
+       Margin="0,10,0,0" x:Name="btnGrabar" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="btnGrabar_Clicked" />
+                </Image.GestureRecognizers>
+            </Image>
 
-            <Button Text="Grabar audio" 
-                    x:Name="btnGrabar" 
-                    Margin="0,20,0,0"
-                    BackgroundColor="#3DB601"
-                    CornerRadius="25"
-                    FontAttributes="Bold"
-                    FontSize="20"
-                    Clicked="btnGrabar_Clicked" />
 
             <Grid Margin="0,20,0,0">
                 <Grid.ColumnDefinitions>
@@ -88,18 +101,14 @@
 
                 <Button x:Name="btnAdd"
                         Text="Agregar"
-                        HorizontalOptions="FillAndExpand"
+                        TextColor="White"
                         Grid.Column="0"
-                        BackgroundColor="#3DB601"
-                        CornerRadius="25"
                         Clicked="btnAdd_Clicked" />
 
                 <Button x:Name="btnList"
                         Text="Lista Sitios"
-                        HorizontalOptions="FillAndExpand"
+                        TextColor="White"
                         Grid.Column="1"
-                        BackgroundColor="#3DB601"
-                        CornerRadius="25"
                         Clicked="btnList_Clicked" />
             </Grid>
         </StackLayout>

@@ -87,6 +87,19 @@
           }
         }
       },
+      "Xam.Plugin.ImageButton/2.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/ImageButton.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/ImageButton.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
       "Xam.Plugin.Media/6.0.2": {
         "type": "package",
         "compile": {
@@ -457,6 +470,25 @@
         "version.txt"
       ]
     },
+    "Xam.Plugin.ImageButton/2.1.1": {
+      "sha512": "CWKfGYOo8scbHODpiJgil0ckgkRg2KSXHlKmeacdOiSfwfua6johh+vjan7C0WRS/y7UpEICHbJOZf0jRRU+Tw==",
+      "type": "package",
+      "path": "xam.plugin.imagebutton/2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/ImageButton.Abstractions.dll",
+        "lib/MonoAndroid10/ImageButton.Abstractions.pdb",
+        "lib/MonoAndroid10/ImageButton.Android.dll",
+        "lib/MonoAndroid10/ImageButton.Android.pdb",
+        "lib/Xamarin.iOS10/ImageButton.Abstractions.dll",
+        "lib/Xamarin.iOS10/ImageButton.iOS.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/ImageButton.Abstractions.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/ImageButton.Abstractions.pdb",
+        "xam.plugin.imagebutton.2.1.1.nupkg.sha512",
+        "xam.plugin.imagebutton.nuspec"
+      ]
+    },
     "Xam.Plugin.Media/6.0.2": {
       "sha512": "QLl5CXxSDF92+E154djfDKOoPSjvGkQSxYmLY0Fitnb6P4B103JQDU7lZlH0ez67GtzZDa8kWvS0Go0Yv1w9og==",
       "type": "package",
@@ -821,6 +853,7 @@
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 13.0.3",
       "Plugin.AudioRecorder >= 1.1.0",
+      "Xam.Plugin.ImageButton >= 2.1.1",
       "Xam.Plugin.Media >= 6.0.2",
       "Xamarin.Controls.SignaturePad.Forms >= 3.0.0",
       "Xamarin.Essentials >= 1.7.7",
@@ -895,6 +928,10 @@
             "target": "Package",
             "version": "[1.1.0, )"
           },
+          "Xam.Plugin.ImageButton": {
+            "target": "Package",
+            "version": "[2.1.1, )"
+          },
           "Xam.Plugin.Media": {
             "target": "Package",
             "version": "[6.0.2, )"
@@ -930,5 +967,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"Xam.Plugin.ImageButton 2.1.1\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \".NETStandard,Version=v2.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "Xam.Plugin.ImageButton",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

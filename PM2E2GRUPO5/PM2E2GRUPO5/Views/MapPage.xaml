@@ -14,18 +14,12 @@
 
         <Frame Padding="0,0,0,0" HeightRequest="40" Grid.Row="0" Grid.Column="0">
             <Grid>
-                <Label Text="MAPA DE UBICACION" 
+                <Label Text="UBICACION" 
                        HorizontalOptions="Center"
                        VerticalOptions="Center"
                        FontSize="20"
-                       TextColor="#2D90F9"
                        FontAttributes="Bold"/>
 
-                <Button Text="Atras"
-                        HorizontalOptions="Start"
-                        BackgroundColor="#2D90F9"
-                        CornerRadius="25"
-                        Clicked="Button_Clicked_1"/>
             </Grid>
         </Frame>
 
@@ -39,7 +33,8 @@
                     
             <Button x:Name="btnNavegar"
                     Text="Navegar"
-                    BackgroundColor="#2D90F9"
+                    BackgroundColor="Green"
+                    TextColor="White"
                     CornerRadius="25"
                     FontSize="16"
                     Clicked="btnNavegar_Clicked"

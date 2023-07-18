@@ -6,6 +6,8 @@ public class MonoPackageManager_Resources {
 		"Acr.UserDialogs.dll",
 		"AndHUD.dll",
 		"FormsViewGroup.dll",
+		"ImageButton.Abstractions.dll",
+		"ImageButton.Android.dll",
 		"Material.Icons.dll",
 		"Newtonsoft.Json.dll",
 		"Plugin.AudioRecorder.dll",

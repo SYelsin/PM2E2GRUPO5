@@ -89,6 +89,28 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
+      "Xam.Plugin.ImageButton/2.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.3.193"
+        },
+        "compile": {
+          "lib/MonoAndroid10/ImageButton.Abstractions.dll": {
+            "related": ".pdb"
+          },
+          "lib/MonoAndroid10/ImageButton.Android.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/MonoAndroid10/ImageButton.Abstractions.dll": {
+            "related": ".pdb"
+          },
+          "lib/MonoAndroid10/ImageButton.Android.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
       "Xam.Plugin.Media/6.0.2": {
         "type": "package",
         "dependencies": {
@@ -2038,6 +2060,7 @@
           "Material.Icons": "2.0.5",
           "Newtonsoft.Json": "13.0.3",
           "Plugin.AudioRecorder": "1.1.0",
+          "Xam.Plugin.ImageButton": "2.1.1",
           "Xam.Plugin.Media": "6.0.2",
           "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "1.7.7",
@@ -2204,6 +2227,25 @@
         "system.numerics.vectors.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Xam.Plugin.ImageButton/2.1.1": {
+      "sha512": "CWKfGYOo8scbHODpiJgil0ckgkRg2KSXHlKmeacdOiSfwfua6johh+vjan7C0WRS/y7UpEICHbJOZf0jRRU+Tw==",
+      "type": "package",
+      "path": "xam.plugin.imagebutton/2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/ImageButton.Abstractions.dll",
+        "lib/MonoAndroid10/ImageButton.Abstractions.pdb",
+        "lib/MonoAndroid10/ImageButton.Android.dll",
+        "lib/MonoAndroid10/ImageButton.Android.pdb",
+        "lib/Xamarin.iOS10/ImageButton.Abstractions.dll",
+        "lib/Xamarin.iOS10/ImageButton.iOS.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/ImageButton.Abstractions.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/ImageButton.Abstractions.pdb",
+        "xam.plugin.imagebutton.2.1.1.nupkg.sha512",
+        "xam.plugin.imagebutton.nuspec"
       ]
     },
     "Xam.Plugin.Media/6.0.2": {

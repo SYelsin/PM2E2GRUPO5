@@ -62,19 +62,31 @@ namespace PM2E2GRUPO5.Views
                     return;
                 }
 
-                bool response = await Application.Current.MainPage.DisplayAlert("Aviso", "Seleccione la acción que desea realizar", "Eliminar", "Actualizar");
-
-                if (response)
+               else
                 {
                     // Delete
                     var sit = Site;
                     await DeleteSite(Site);
                 }
-                else
+            }
+            catch (Exception ex)
+            {
+                Message("Error:", ex.Message);
+            }
+        }
+
+        private async void btnUpdate_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Site == null)
                 {
-                    editando = true;
-                    await Navigation.PushModalAsync(new UpdateSite(Site));
+                    Message("Aviso", "Seleccione un sitio");
+                    return;
                 }
+
+                editando = true;
+                /* await Navigation.PushModalAsync(new UpdateSite(Site));*/
             }
             catch (Exception ex)
             {
@@ -84,7 +96,7 @@ namespace PM2E2GRUPO5.Views
 
         private async Task DeleteSite(Sitio site)
         {
-            var status = await DisplayAlert("Aviso", $"¿Desea eliminar el sitio con Descripcion: {Site.Descripcion}?", "SI", "NO");
+            var status = await DisplayAlert("Aviso", $"¿Desea eliminar el sitio {Site.Descripcion}?", "SI", "NO");
 
             if (status)
             {
@@ -95,6 +107,7 @@ namespace PM2E2GRUPO5.Views
                     Site = null;
                     LoadData();
                     Site = null;
+                    await DisplayAlert("Aviso", "El sitio se eliminó correctamente.", "OK");
                 }
                 else
                 {

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E2GRUPO5.MainPage"
+             NavigationPage.HasNavigationBar="True">
+
+    <ScrollView>
+        <StackLayout x:Name="mainLayout" Margin="20">
+            <Label Text="NUEVO SITIO" 
+                   HorizontalOptions="Center"
+                   TextColor="#000000" 
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   Margin="0,0,0,20" />
+
+            <Image Source="logo.png"
+                   Aspect="AspectFit"
+                   WidthRequest="110"
+                   HorizontalOptions="Center"
+                   Margin="0,20" />
+
+            <forms:SignaturePadView 
+                x:Name="PadView"
+                StrokeWidth="3"
+                WidthRequest="300"
+                HeightRequest="300"
+                VerticalOptions="Center"
+                HorizontalOptions="CenterAndExpand"
+                Margin="0,20" />
+
+            <Label Text="Latitud:" 
+                   HorizontalOptions="Start" 
+                   FontSize="20"
+                   TextColor="#000000"
+                   Margin="0,20,0,0" />
+
+            <Entry x:Name="txtLatitude"
+                   Keyboard="Numeric"
+                   Margin="0,5,0,0"
+                   IsEnabled="False" />
+
+            <Label Text="Longitud:" 
+                   HorizontalOptions="Start" 
+                   FontSize="20"
+                   TextColor="#000000"
+                   Margin="0,20,0,0" />
+
+            <Entry x:Name="txtLongitude"
+                   Keyboard="Numeric"
+                   Margin="0,5,0,0"
+                   IsEnabled="False" />
+
+            <Label Text="Descripción:" 
+                   HorizontalOptions="Start" 
+                   FontSize="20"
+                   TextColor="#000000"
+                   Margin="0,20,0,0" />
+
+            <Editor x:Name="txtDescription"
+                    Keyboard="Text"
+                    AutoSize="TextChanges"
+                    MaxLength="50"
+                    Margin="0,5,0,0"
+                    Placeholder="Escriba una descripción" />
+
+            <Label Text=""
+                   TextColor="#000000"
+                   HorizontalOptions="Center"
+                   x:Name="txtMessage"   
+                   FontSize="20"
+                   Margin="0,20,0,0" />
+
+            <Button Text="Grabar audio" 
+                    x:Name="btnGrabar" 
+                    Margin="0,20,0,0"
+                    BackgroundColor="#3DB601"
+                    CornerRadius="25"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    Clicked="btnGrabar_Clicked" />
+
+            <Grid Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnAdd"
+                        Text="Agregar"
+                        HorizontalOptions="FillAndExpand"
+                        Grid.Column="0"
+                        BackgroundColor="#3DB601"
+                        CornerRadius="25"
+                        Clicked="btnAdd_Clicked" />
+
+                <Button x:Name="btnList"
+                        Text="Lista Sitios"
+                        HorizontalOptions="FillAndExpand"
+                        Grid.Column="1"
+                        BackgroundColor="#3DB601"
+                        CornerRadius="25"
+                        Clicked="btnList_Clicked" />
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

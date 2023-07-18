@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E2GRUPO5.Views.ListSite"
+             xmlns:Converter="clr-namespace:PM2E2GRUPO5.Converter"
+             NavigationPage.HasNavigationBar="True">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converter:ByteArrayToImage x:Key="ByteToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+
+        <Frame Padding="0,0,0,0" Grid.Row="0"  >
+            <Grid>
+                <Label Text="Ubicaciones Guardadas" 
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                        
+                       FontSize="20"
+                       FontAttributes="Bold" />
+
+                
+            </Grid>
+        </Frame>
+
+        <StackLayout Grid.Row="1">
+            <ActivityIndicator x:Name="activityIndicator" IsRunning="{Binding IsLoading}" Color="Gray" />
+            <ListView x:Name="listSites" 
+                      ItemTapped="listSites_ItemTapped">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Margin="0, 2, 0, 2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding Image,  Converter={StaticResource ByteToImage}}"
+                                       Grid.Column="0"/>
+
+                                <Label Grid.Column="1" 
+                                       Text="{Binding Descripcion}"
+                                       VerticalOptions="Center"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+        <StackLayout Grid.Row="2">
+            <Grid>
+                <Button x:Name="btnViewMapa"
+                        Text="Ver Mapa"
+                        HorizontalOptions="FillAndExpand"
+                        Grid.Column="0"
+                        BackgroundColor="#3DB601"
+                        CornerRadius="25"
+                        Grid.Row="0"
+                        HeightRequest="40"
+                        Clicked="btnViewMapa_Clicked" />
+
+                <Button x:Name="btnViewListen"
+                        Text="Escuchar Audio"
+                        HorizontalOptions="FillAndExpand" 
+                        BackgroundColor="#2D90F9"
+                        CornerRadius="25"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        HeightRequest="40"
+                        Clicked="btnViewListen_Clicked" />
+
+                <Button x:Name="btnDelete"
+                        Text="Eliminar/Actualizar"
+                        HorizontalOptions="FillAndExpand"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="#D10"
+                        CornerRadius="25"
+                        Grid.Row="1"
+                        HeightRequest="40"
+                        Clicked="btnDelete_Clicked" />
+            </Grid>
+        </StackLayout>
+    </Grid>
+</ContentPage>

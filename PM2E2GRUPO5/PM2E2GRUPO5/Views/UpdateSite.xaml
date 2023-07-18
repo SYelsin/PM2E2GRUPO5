@@ -1,9 +1,109 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PM2E2GRUPO5.TabbedPage1">
-  <!--Pages can be added as references or inline-->
-  <ContentPage Title="Tab 1" />
-  <ContentPage Title="Tab 2" />
-  <ContentPage Title="Tab 3" />
-</TabbedPage>
+             x:Class="PM2E2GRUPO5.Views.UpdateSite"
+             NavigationPage.HasNavigationBar="True">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">#3DB601</Color>
+            <Color x:Key="SecondaryColor">#000000</Color>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource SecondaryColor}" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style TargetType="Editor">
+                <Setter Property="Keyboard" Value="Text" />
+                <Setter Property="AutoSize" Value="TextChanges" />
+                <Setter Property="MaxLength" Value="50" />
+                <Setter Property="Margin" Value="0,5,0,0" />
+                <Setter Property="Placeholder" Value="Escriba una descripción" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="Margin" Value="0,20,0,0" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="Keyboard" Value="Numeric" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="IsEnabled" Value="False" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="WidthRequest" Value="90" />
+                <Setter Property="HeightRequest" Value="40" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout x:Name="mainLayout" Margin="20">
+            <Label Text="ACTUALIZAR SITIO" 
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   Margin="0,0,0,20" />
+
+            <forms:SignaturePadView 
+                x:Name="PadView"
+                StrokeWidth="3"
+                WidthRequest="300"
+                HeightRequest="150"
+                VerticalOptions="Center"
+                HorizontalOptions="CenterAndExpand"
+                Margin="0,20" />
+
+            <StackLayout HorizontalOptions="Center">
+                <Grid Margin="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="Latitud:" />
+                    <Label Grid.Column="1" Text="Longitud:" />
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Entry x:Name="txtLatitude"
+                           Grid.Column="0" />
+
+                    <Entry x:Name="txtLongitude"
+                           Grid.Column="1" />
+                </Grid>
+            </StackLayout>
+
+            <Label Text="Descripción:" 
+                   Margin="0,20,0,0" />
+
+            <Editor x:Name="txtDescription" />
+
+            <Image Source="microfono.png" WidthRequest="100" HeightRequest="100" Aspect="AspectFit" 
+       VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+       IsEnabled="True" BackgroundColor="Transparent" 
+       Margin="0,10,0,0" x:Name="btnGrabar" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="btnGrabar_Clicked" />
+                </Image.GestureRecognizers>
+            </Image>
+
+
+            
+                
+
+                <Button x:Name="btnUpdate"
+                        HorizontalOptions="Center"
+                        Text="Actualizar"
+                        TextColor="White"
+                        Clicked="btnUpdate_Clicked" />
+
+                
+            
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

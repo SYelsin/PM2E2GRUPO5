@@ -75,7 +75,7 @@ namespace PM2E2GRUPO5.Views
             }
         }
 
-        private async void btnUpdate_Clicked(object sender, EventArgs e)
+        private async void btnUpdate_Clicked(object sender, EventArgs e )
         {
             try
             {
@@ -86,7 +86,7 @@ namespace PM2E2GRUPO5.Views
                 }
 
                 editando = true;
-                /* await Navigation.PushModalAsync(new UpdateSite(Site));*/
+                await Navigation.PushModalAsync(new UpdateSite(Site));
             }
             catch (Exception ex)
             {

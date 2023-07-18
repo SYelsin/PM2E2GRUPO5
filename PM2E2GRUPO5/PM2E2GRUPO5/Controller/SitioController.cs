@@ -79,7 +79,7 @@ namespace PM2E2GRUPO5.Controller
         {
             try
             {
-                var requestUri = new Uri(URL_SITIOS + "Update.php");
+                var requestUri = new Uri(URL_SITIOS + "Update.php?Id=" + sitio.Id);
                 var jsonObject = JsonConvert.SerializeObject(sitio);
                 var content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
                 var response = await client.PutAsync(requestUri, content);

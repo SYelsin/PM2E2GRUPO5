@@ -97,7 +97,7 @@
                 
 
                 <Button x:Name="btnUpdate"
-                        HorizontalOptions="Center"
+                        HorizontalOptions="CenterAndExpand"
                         Text="Actualizar"
                         TextColor="White"
                         Clicked="btnUpdate_Clicked" />
